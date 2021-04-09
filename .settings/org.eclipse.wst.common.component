@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ssm-demo-master">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/ssm-demo/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/ssm-login/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/ssm-maven/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/ssm-maven/src/test/java"/>
+        <property name="context-root" value="ssm-demo-master"/>
+        <property name="java-output-path" value="/ssm-demo-master/bin"/>
+    </wb-module>
+</project-modules>
