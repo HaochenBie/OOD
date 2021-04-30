@@ -63,7 +63,13 @@ public class UserController {
             HttpSession session = request.getSession();
             session.setAttribute("currentUser", resultUser);
             MDC.put("userName", user.getUserName());
-            return "redirect:/main.jsp";
+            if(user.getUserName()=="admin") {
+            	return "redirect:/main.jsp";
+            }
+            else {
+            	return "redirect:/main_user.jsp";
+            }
+            
         }
     }
 

@@ -23,6 +23,7 @@
             src="${pageContext.request.contextPath}/ueditor/ueditor.all.min.js">
 
     </script>
+
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/js/common.js"></script>
 
@@ -199,7 +200,10 @@
         $('#editor').append(html);
         ResetEditor(editor);
         var ue = UE.getEditor('myEditor');
-        ue.setContent(row.articleContent);
+        ue.addListener("ready", function () { 
+        	ue.setContent(row.articleContent);
+        });
+        //ue.setContent(row.articleContent);
         url = "${pageContext.request.contextPath}/article/save.do?id="
                 + row.id;
     }

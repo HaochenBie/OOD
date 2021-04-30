@@ -21,17 +21,18 @@
 
     window.onload = function () {
         $.ajax({
-            type: "post",
+            type: "POST",
             dataType: "json",
-            url: "/article/findById.do",
+            url: "/ssm-maven/article/findById.do",
             data: {"id": getQueryStringByName("id")},
+            async: false,
             success: function (data) {
                 if (data != null) {
                     $('.article').html(data.articleContent);
                     console.log(data.articleContent);
                 }
                 else {
-                    alert("鏃犳暟鎹�!");
+                    alert("emptyarticle!");
                 }
             }
         });
