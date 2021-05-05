@@ -36,10 +36,10 @@ public class UserController {
 
     @Resource
     private UserService userService;
-    private static final Logger log = Logger.getLogger(UserController.class);// 日志文件
+    private static final Logger log = Logger.getLogger(UserController.class);// 鏃ュ織鏂囦欢
 
     /**
-     * 登录
+     * 鐧诲綍
      *
      * @param user
      * @param request
@@ -57,13 +57,13 @@ public class UserController {
         log.info("request: user/login , user: " + user.toString());
         if (resultUser == null) {
             request.setAttribute("user", user);
-            request.setAttribute("errorMsg", "请认真核对账号、密码！");
+            request.setAttribute("errorMsg", "璇疯鐪熸牳瀵硅处鍙枫�佸瘑鐮侊紒");
             return "login";
         } else {
             HttpSession session = request.getSession();
             session.setAttribute("currentUser", resultUser);
             MDC.put("userName", user.getUserName());
-            if(user.getUserName()=="admin") {
+            if(user.getUserName().equals("admin")) {
             	return "redirect:/main.jsp";
             }
             else {
@@ -75,7 +75,7 @@ public class UserController {
 
 
     /**
-     * 修改密码
+     * 淇敼瀵嗙爜
      *
      * @param user
      * @param response
@@ -99,7 +99,7 @@ public class UserController {
     }
 
     /**
-     * 退出系统
+     * 閫�鍑虹郴缁�
      *
      * @return
      * @throws Exception
@@ -141,7 +141,7 @@ public class UserController {
     }
 
     /**
-     * 添加或修改管理员
+     * 娣诲姞鎴栦慨鏀圭鐞嗗憳
      *
      * @param response
      * @return
@@ -169,7 +169,7 @@ public class UserController {
     }
 
     /**
-     * 删除管理员
+     * 鍒犻櫎绠＄悊鍛�
      *
      * @param ids
      * @param response

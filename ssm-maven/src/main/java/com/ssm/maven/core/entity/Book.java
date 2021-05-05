@@ -21,7 +21,7 @@ public class Book implements Serializable {
     private String author;// 作者
     private String publisher;// 出版社
     private String catalog;// 目录
-    private int supply;// 库存
+    private String supply;// 库存
     private String status;// 状态
     private int hot;// 热度值
 
@@ -129,11 +129,11 @@ public class Book implements Serializable {
         this.catalog = catalog;
     }
 
-    public int getSupply() {
+    public String getSupply() {
         return supply;
     }
 
-    public void setSupply(int supply) {
+    public void setSupply(String supply) {
         this.supply = supply;
     }
 

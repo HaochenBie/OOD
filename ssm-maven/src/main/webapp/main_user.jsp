@@ -15,7 +15,9 @@
             src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/jquery.easyui.min.js"></script>
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi22QldoqTNIvSH8bUTYnSniq7st7vryQ"></script>
     <script type="text/javascript">
+    
         var url;
         function addTab(url, text, iconCls) {
             var content = "<iframe frameborder=0 scrolling='auto' style='width:100%;height:100%' src='${pageContext.request.contextPath}/views/"
@@ -65,26 +67,28 @@
 </div>
 <div region="center">
     <div class="easyui-tabs" fit="true" border="false" id="tabs">
-        <div title="Front Page" data-options="iconCls:'icon-home'">
-                        <div align="center" style="padding-top: 20px;"><a
-                    href="https://git.oschina.net/zhenfeng13/ssm-demo"
-                    target="_blank" style="font-size: 20px;">开源中国仓库地址</a>
-            </div>
-            <div align="center" style="padding-top: 20px;"><a href="https://github.com/ZHENFENG13/ssm-demo"
-                                                              target="_blank"
-                                                              style="font-size: 20px;">Gitub仓库地址</a></div>
-
-            <div align="center" style="padding-top: 50px;"><a
-                    href="http://download.csdn.net/detail/zhenfengshisan/9813721"
-                    target="_blank" style="font-size: 20px;">项目源码下载(最新代码)</a>
-            </div>
-            <div align="center" style="padding-top: 20px;"><a
-                    href="http://download.csdn.net/detail/zhenfengshisan/9765855"
-                    target="_blank" style="font-size: 20px;">项目源码下载(非maven)</a>
-            </div>
-            <div align="center" style="padding-top: 50px">
-                <font color="grey" size="10">ssm demo</font>
-            </div>
+        <div id="googleMap" style="width:100%;height:380px;"></div>
+        <script>
+  // 初始化地图
+      function initialize() {
+          var mapProp = {
+              center:new google.maps.LatLng(37.09024,-95.71289100000001),
+              zoom:4,
+              mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+          map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+          
+          var myLatLng = {lat: -25.363, lng: 131.044};
+          var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: 'Hello World!'
+            });
+     }
+ 
+     google.maps.event.addDomListener(window, 'load', initialize);
+     
+ </script>
         </div>
     </div>
 </div>
