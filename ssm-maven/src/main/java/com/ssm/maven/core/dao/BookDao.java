@@ -45,6 +45,13 @@ public interface BookDao extends Serializable {
      * @return
      */
     public Book getBookById(String id);
-
+    
+    /**
+     * 根据book修改
+     *
+     * @param book
+     * @return
+     */
+    public int updateBook(Book book);
 
 }

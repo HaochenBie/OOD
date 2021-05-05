@@ -34,6 +34,9 @@
             <if test="isbn!=null and isbn!='' ">
                 and isbn = #{isbn}
             </if>
+            <if test="publisher!=null and publisher!='' ">
+                and publisher = #{publisher}
+            </if>
         </where>
         ORDER BY id desc
         <if test="start!=null and size!=null">
@@ -55,7 +58,13 @@
             </if>
         </where>
     </select>
-
+	<update id="updateBook" parameterType="Book">
+        update ssm_book
+        <set>
+            supply = #{supply}
+        </set>
+        where id=#{id} and <![CDATA[ id <> 2 ]]>
+    </update>
 
     <select id="getBookById" parameterType="String" resultMap="BookResult">
         select id,isbn,path,title,subtitle,market_price,pages,author,publisher,binding,hot,status,supply

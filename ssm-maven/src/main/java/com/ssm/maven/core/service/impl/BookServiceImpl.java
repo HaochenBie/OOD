@@ -42,5 +42,10 @@ public class BookServiceImpl implements BookService {
     public Book getBookById(String id) {
         return bookDao.getBookById(id);
     }
+    
+    @Override
+    public int updateBook(Book book) {
+        return bookDao.updateBook(book);
+    }
 
 }

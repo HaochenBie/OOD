@@ -2,7 +2,9 @@ package com.ssm.maven.core.admin;
 
 import com.ssm.maven.core.entity.Book;
 import com.ssm.maven.core.entity.PageBean;
+import com.ssm.maven.core.entity.User;
 import com.ssm.maven.core.service.BookService;
+import com.ssm.maven.core.util.MD5Util;
 import com.ssm.maven.core.util.ResponseUtil;
 import com.ssm.maven.core.util.StringUtil;
 import net.sf.json.JSONArray;
@@ -31,6 +33,33 @@ public class BookController {
     private static final long serialVersionUID = 1L;
     private static final Logger log = Logger.getLogger(BookController.class);// 日志文件
 
+    /**
+     * 娣诲姞鎴栦慨鏀圭鐞嗗憳
+     *
+     * @param response
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/update")
+    public String save(Book book, HttpServletResponse response) throws Exception {
+        int resultTotal = 0;
+        String comment = book.getSupply();
+        book.setSupply(comment);
+        resultTotal = bookService.updateBook(book);
+        
+        JSONObject result = new JSONObject();
+        if (resultTotal > 0) {
+            result.put("success", true);
+        } else {
+            result.put("success", false);
+        }
+        log.info("request: book/update , book: " + book.toString());
+        ResponseUtil.write(response, result);
+        return null;
+    }
+    
+    
+    
     @RequestMapping("/listAll")
     public String listAll(
             @RequestParam(value = "page", required = false) String page,
@@ -57,6 +86,10 @@ public class BookController {
         if (book.getIsbn() != null &&
                 !"".equals(book.getIsbn())) {
             map.put("isbn", book.getIsbn() + "");
+        }
+        if (book.getPublisher() != null &&
+                !"".equals(book.getPublisher())) {
+            map.put("publisher", book.getPublisher() + "");
         }
         bookList = bookService.findBooks(map);
         total = bookService.getTotalBooks(map);
