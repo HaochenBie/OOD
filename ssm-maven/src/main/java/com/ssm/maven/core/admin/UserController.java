@@ -36,10 +36,9 @@ public class UserController {
 
     @Resource
     private UserService userService;
-    private static final Logger log = Logger.getLogger(UserController.class);// 鏃ュ織鏂囦欢
+    private static final Logger log = Logger.getLogger(UserController.class);//
 
     /**
-     * 鐧诲綍
      *
      * @param user
      * @param request

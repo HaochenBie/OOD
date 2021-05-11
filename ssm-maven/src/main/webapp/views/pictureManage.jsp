@@ -20,7 +20,7 @@
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/jquery.easyui.min.js"></script>
     <script type="text/javascript"
-            src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"></script>
+            src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/locale/easyui-lang-en.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.uploadify.v2.0.3.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/swfobject.js"></script>
         <%
@@ -30,34 +30,34 @@
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/js/common.js"></script>
 <body style="margin:1px;" id="ff">
-<table id="dg" title="图片信息管理" class="easyui-datagrid" pagination="true"
+<table id="dg" title="PictureManage" class="easyui-datagrid" pagination="true"
        rownumbers="true" fit="true" data-options="pageSize:10"
        url="${pageContext.request.contextPath}/picture/list.do?type=<%=type %>&grade=<%=grade %>"
        toolbar="#tb">
     <thead data-options="frozen:true">
     <tr>
         <th field="cb" checkbox="true" align="center"></th>
-        <th field="id" width="10%" align="center" hidden="true">编号</th>
-        <th field="path" width="300" align="center" formatter="formatProPic">缩略图</th>
-        <th field="time" width="150" align="center">创建时间</th>
-        <th field="url" width="150" align="center">图片链接</th>
+        <th field="id" width="10%" align="center" hidden="true">No.</th>
+        <th field="path" width="300" align="center" formatter="formatProPic">Thumbnail</th>
+        <th field="time" width="150" align="center">create time</th>
+        <th field="url" width="150" align="center">editor</th>
     </tr>
     </thead>
 </table>
 <div id="tb">
     <div>
         <a href="javascript:openPictureAddDialog()" class="easyui-linkbutton"
-           iconCls="icon-add" plain="true">添加</a> <a
+           iconCls="icon-add" plain="true">add</a> <a
             href="javascript:openPictureModifyDialog()"
-            class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改</a> <a
+            class="easyui-linkbutton" iconCls="icon-edit" plain="true">edit</a> <a
             href="javascript:deletePicture()" class="easyui-linkbutton"
-            iconCls="icon-remove" plain="true">删除</a>
+            iconCls="icon-remove" plain="true">delete</a>
     </div>
     <div>
         &nbsp;标题：&nbsp;<input type="text" id="url" size="20"
                               onkeydown="if(event.keyCode==13) searchPicture()"/>&nbsp; <a
             href="javascript:searchPicture()" class="easyui-linkbutton"
-            iconCls="icon-search" plain="true">搜索</a>
+            iconCls="icon-search" plain="true">search</a>
     </div>
 </div>
 <div id="dlg" class="easyui-dialog"
@@ -69,9 +69,9 @@
                 <div id="pic11" style="display:none;" class="i_do_div rel">
 
                 </div>
-                <div class="i_do_div rel" id="picture"><p class="i_do_tle r_txt abs font14">展示图片</p>
+                <div class="i_do_div rel" id="picture"><p class="i_do_tle r_txt abs font14">Show picture</p>
                 </div>
-                <div class="i_do_div rel" id="i_no_sku_stock_wrap"><p class="i_do_tle r_txt abs font14">图片链接</p>
+                <div class="i_do_div rel" id="i_no_sku_stock_wrap"><p class="i_do_tle r_txt abs font14">Picture link</p>
                     <input type="text" id="desc" name="url" value="" required="true" class="easyui-validatebox" style="border:1px #9c9c9c solid;height:25px;"/>
                     <input type="hidden" name="type" value="<%=type%>"/>
                     <input type="hidden" name="grade" value="<%=grade%>"/>
@@ -84,8 +84,8 @@
 
 <div id="dlg-buttons">
     <a href="javascript:savePicture()" class="easyui-linkbutton"
-       iconCls="icon-ok">保存</a> <a href="javascript:closePictureDialog()"
-                                   class="easyui-linkbutton" iconCls="icon-cancel">关闭</a>
+       iconCls="icon-ok">save</a> <a href="javascript:closePictureDialog()"
+                                   class="easyui-linkbutton" iconCls="icon-cancel">close</a>
 </div>
 
 
@@ -102,7 +102,7 @@
     function deletePicture() {
         var selectedRows = $("#dg").datagrid('getSelections');
         if (selectedRows.length == 0) {
-            $.messager.alert("系统提示", "请选择要删除的数据！");
+            $.messager.alert("System", "Please select what you want to delete");
             return;
         }
         var strIds = [];
@@ -110,18 +110,18 @@
             strIds.push(selectedRows[i].id);
         }
         var ids = strIds.join(",");
-        $.messager.confirm("系统提示", "您确认要删除这<font color=red>"
-                + selectedRows.length + "</font>条数据吗？", function (r) {
+        $.messager.confirm("System", "Are you sure you want to delete <font color=red>"
+                + selectedRows.length + "</font>？", function (r) {
             if (r) {
                 $.post("${pageContext.request.contextPath}/picture/delete.do",
                         {
                             ids: ids
                         }, function (result) {
                             if (result.success) {
-                                $.messager.alert("系统提示", "数据已成功删除！");
+                                $.messager.alert("System", "Deletion successed");
                                 $("#dg").datagrid("reload");
                             } else {
-                                $.messager.alert("系统提示", "数据删除失败！");
+                                $.messager.alert("System", "Deletion failed");
                             }
                         }, "json");
             }
@@ -129,7 +129,7 @@
 
     }
     function openPictureAddDialog() {
-        $("#dlg").dialog("open").dialog("setTitle", "添加图片");
+        $("#dlg").dialog("open").dialog("setTitle", "Add picture");
         var html = '<img name="uploadify2" id="uploadify2"  type="file" />';
         $('#picture').append(html);
         var imghtml = '<img src="images/back.jpg" width="110" height="110" id="img11"  style="display:none;"/><input type="text" id="input11" name="path" value="" style="display:none;" />';
@@ -147,12 +147,12 @@
             },
             success: function (result) {
                 if (result.success) {
-                    $.messager.alert("系统提示", "保存成功");
+                    $.messager.alert("System", "Saved");
                     $("#dlg").dialog("close");
                     $("#dg").datagrid("reload");
                     resetValue();
                 } else {
-                    $.messager.alert("系统提示", "保存失败");
+                    $.messager.alert("System", "Save failed");
                     window.location.reload();
                     return;
                 }
@@ -168,11 +168,11 @@
         var imghtml = '<img src="images/back.jpg" width="110" height="110" id="img11"  style="display:none;"/><input type="text" id="input11" name="path" value="' + row.path + '" style="display:none;" />';
         $('#pic11').append(imghtml);
         if (selectedRows.length != 1) {
-            $.messager.alert("系统提示", "请选择一条要编辑的数据！");
+            $.messager.alert("System", "Please pick what you want to edit");
             return;
         }
         initUploadify();
-        $("#dlg").dialog("open").dialog("setTitle", "修改信息");
+        $("#dlg").dialog("open").dialog("setTitle", "change data");
         $('#fm').form('load', row);
         url = "${pageContext.request.contextPath}/picture/save.do?id="
                 + row.id;
@@ -209,7 +209,7 @@
             'multi': true, 								//设置为true时可以上传多个文件
             'simUploadLimit': 1, 						//允许同时上传的个数 默认值：1
             'sizeLimit': 2048000,						//上传文件的大小限制
-            'buttonText': '上传图片',						//浏览按钮的文本，默认值：BROWSE
+            'buttonText': 'Upload',						//浏览按钮的文本，默认值：BROWSE
             'displayData': 'percentage',     			//上传队列显示的数据类型，percentage是百分比，speed是上传速度
             //回调函数
             'onComplete': function (evt, queueID, fileObj, response, data) {
@@ -221,12 +221,12 @@
             },
             'onError': function (event, queueID, fileObj, errorObj) {
                 if (errorObj.type === "File Size") {
-                    alert("文件最大为3M");
+                    alert("Max file size is 3M");
                     $("#uploadify").uploadifyClearQueue();
                 }
             },
             'onQueueFull': function (event, queueSizeLimit) {
-                alert("最多上传" + queueSizeLimit + "张图片");
+                alert("Picture limit is" + queueSizeLimit);
                 return false;
             }
         });

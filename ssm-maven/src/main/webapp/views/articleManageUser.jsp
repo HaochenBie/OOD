@@ -46,14 +46,7 @@
     </thead>
 </table>
 <div id="tb">
-    <div>
-        <a href="javascript:openArticleAddDialog()" class="easyui-linkbutton"
-           iconCls="icon-add" plain="true">add</a> <a
-            href="javascript:openArticleModifyDialog()"
-            class="easyui-linkbutton" iconCls="icon-edit" plain="true">edit</a> <a
-            href="javascript:deleteArticle()" class="easyui-linkbutton"
-            iconCls="icon-remove" plain="true">delete</a>
-    </div>
+    
     <div>
         &nbsp;title：&nbsp;<input type="text" id="articleTitle" size="20"
                               onkeydown="if(event.keyCode==13) searchArticle()"/>&nbsp; <a

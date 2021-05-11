@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>ssm-maven系统登录</title>
+    <title>PocketDoc Demo</title>
     <%--<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>--%>
     <style type=text/css>
         body {
@@ -62,11 +62,11 @@
             var password = $("#password").val();
             var roleName = $("#roleName").val();
             if (userName == null || userName == "") {
-                alert("用户名不能为空！");
+                alert("user can't be empty!");
                 return;
             }
             if (password == null || password == "") {
-                alert("密码不能为空！");
+                alert("password can't be empty!");
                 return;
             }
             $("#adminlogin").submit();

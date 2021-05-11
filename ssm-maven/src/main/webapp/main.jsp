@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>ssm-maven系统主页</title>
+    <title>PockectDoc Demo</title>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/jquery-easyui-1.3.3/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css"
@@ -14,7 +14,7 @@
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/jquery.easyui.min.js"></script>
     <script type="text/javascript"
-            src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"></script>
+            src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/locale/easyui-lang-en.js"></script>
     <script type="text/javascript">
         var url;
         function addTab(url, text, iconCls) {
@@ -40,8 +40,8 @@
         function logout() {
             $.messager
                     .confirm(
-                            "系统提示",
-                            "您确定要退出系统吗",
+                            "System Warning",
+                            "Sure you want to logout?",
                             function (r) {
                                 if (r) {
                                     window.location.href = "${pageContext.request.contextPath}/user/logout.do";
@@ -67,23 +67,23 @@
     <div class="easyui-tabs" fit="true" border="false" id="tabs">
         <div title="Front Page" data-options="iconCls:'icon-home'">
                         <div align="center" style="padding-top: 20px;"><a
-                    href="https://git.oschina.net/zhenfeng13/ssm-demo"
-                    target="_blank" style="font-size: 20px;">开源中国仓库地址</a>
+                    
+                    target="_blank" style="font-size: 70px;">PocketDoc</a>
             </div>
-            <div align="center" style="padding-top: 20px;"><a href="https://github.com/ZHENFENG13/ssm-demo"
+            <div align="center" style="padding-top: 20px;"><a href="https://github.com/HaochenBie/OOD"
                                                               target="_blank"
-                                                              style="font-size: 20px;">Gitub仓库地址</a></div>
+                                                              style="font-size: 20px;">Github address</a></div>
 
             <div align="center" style="padding-top: 50px;"><a
-                    href="http://download.csdn.net/detail/zhenfengshisan/9813721"
-                    target="_blank" style="font-size: 20px;">项目源码下载(最新代码)</a>
+                    
+                    target="_blank" style="font-size: 20px;">Sitao Wang, Haochen Bie, Weilai Mao, Zedong Wang, Haopu Wu</a>
             </div>
             <div align="center" style="padding-top: 20px;"><a
-                    href="http://download.csdn.net/detail/zhenfengshisan/9765855"
-                    target="_blank" style="font-size: 20px;">项目源码下载(非maven)</a>
+                    
+                    target="grey" style="font-size: 20px;">#Admin Page#</a>
             </div>
             <div align="center" style="padding-top: 50px">
-                <font color="grey" size="10">ssm demo</font>
+                <font color="grey" size="10">Project demo</font>
             </div>
         </div>
     </div>
@@ -95,19 +95,12 @@
              data-options="selected:true,iconCls:'icon-wenzhangs'"
              style="padding: 10px;height:10px;">
             <a
-                    href="javascript:openTab(' 文章管理','articleManage.jsp','icon-wenzhang')"
+                    href="javascript:openTab(' ArticleManage','articleManage.jsp','icon-wenzhang')"
                     class="easyui-linkbutton"
                     data-options="plain:true,iconCls:'icon-wenzhang'"
                     style="width: 150px;"> ArticleManagement</a>
         </div>
-        <div title="PictureManage" data-options="iconCls:'icon-shouye'"
-             style="padding:10px">
-            <a
-                    href="javascript:openTab(' 图片设置','pictureManage.jsp?type=1&grade=1','icon-tupians')"
-                    class="easyui-linkbutton"
-                    data-options="plain:true,iconCls:'icon-tupian'"
-                    style="width: 150px;"> PictureSetting</a>
-        </div>
+        
         <div title="Medicine Manage" data-options="iconCls:'icon-shuji'"
              style="padding:10px">
             <a
@@ -118,7 +111,7 @@
         </div>
         <div title="UserManage" data-options="iconCls:'icon-item'"
              style="padding:10px;border:none;">
-            <a href="javascript:openTab(' 管理员列表','userManage.jsp','icon-lxr')"
+            <a href="javascript:openTab(' AdminList','userManage.jsp','icon-lxr')"
                class="easyui-linkbutton"
                data-options="plain:true,iconCls:'icon-lxr'" style="width: 150px;">
                 Admin list</a><a href="javascript:logout()"

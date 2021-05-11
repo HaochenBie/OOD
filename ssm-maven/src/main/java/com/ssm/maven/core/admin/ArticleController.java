@@ -29,7 +29,6 @@ public class ArticleController {
 	private static final Logger log = Logger.getLogger(ArticleController.class);// 日志文件
 
 	/**
-	 * 查找相应的数据集合
 	 * 
 	 * @param page
 	 * @param rows

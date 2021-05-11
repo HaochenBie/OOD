@@ -26,7 +26,7 @@
 <script type="text/javascript"
         src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/jquery.easyui.min.js"></script>
 <script type="text/javascript"
-        src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"></script>
+        src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/locale/easyui-lang-en.js"></script>
 <script type="text/javascript"
         src="${pageContext.request.contextPath}/js/jquery.uploadify.v2.0.3.js"></script>
 <script type="text/javascript"
@@ -39,11 +39,11 @@ function openUserModifyDialog() {
     var selectedRows = $("#dg").datagrid('getSelections');
     console.log(selectedRows);
     if (selectedRows.length != 1) {
-        $.messager.alert("系统提示", "请选择一条要编辑的数据！");
+        $.messager.alert("System", "Please select a artical");
         return;
     }
     var row = selectedRows[0];
-    $("#dlg").dialog("open").dialog("setTitle", "编辑用户信息");
+    $("#dlg").dialog("open").dialog("setTitle", "Edit info");
     $('#fm').form('load', row);
     $("#password").val("******");
     url = "${pageContext.request.contextPath}/book/update.do?id=" + row.id;
@@ -56,17 +56,17 @@ function openUserModifyDialog() {
     <thead data-options="frozen:true">
     <tr>
         <th field="cb" checkbox="true" align="center"></th>
-        <th field="id" width="10" align="center" hidden="true">编号</th>
-        <th field="subtitle" width="10" align="center" hidden="true">副标题</th>
+        <th field="id" width="10" align="center" hidden="true">No.</th>
+        <th field="subtitle" width="10" align="center" hidden="true">2nd Title</th>
         <th field="title" width="110" align="center">TradeName</th>
         <th field="author" width="100" align="center">Manufacturer</th>
         <th field="isbn" width="120" align="center">NDC Code</th>
         <th field="path" width="100" align="center" formatter="formatProPic">Picture</th>
         <th field="marketPrice" width="70" align="center">Price</th>
-        <th hidden field="pages" width="50" align="center">页数</th> 
+        <th hidden field="pages" width="50" align="center">page</th> 
         <th field="publisher" width="120" align="center">Desease</th>
-        <th hidden field="binding" width="10" align="center" hidden="true">装订方式</th>
-        <th field="hot" width="10" align="center" hidden="true">热度值</th>
+        <th hidden field="binding" width="10" align="center" hidden="true">Way</th>
+        <th field="hot" width="10" align="center" hidden="true">heat</th>
         <th field="status" width="70" align="center"
             formatter="formatStatus">Status
         </th>
@@ -99,7 +99,7 @@ function openUserModifyDialog() {
     <form id="fm" method="post">
         <table cellspacing="8px">
             <tr>
-                <td>用户名：</td>
+                <td>Comment：</td>
                 <td><input type="text" id="supply" name="supply"
                            class="easyui-validatebox" required="true"/>&nbsp;<font
                         color="red">*</font>
@@ -111,8 +111,8 @@ function openUserModifyDialog() {
 </div>
 <div id="dlg-buttons">
     <a href="javascript:saveUser()" class="easyui-linkbutton"
-       iconCls="icon-ok">保存</a> <a href="javascript:closeUserDialog()"
-                                   class="easyui-linkbutton" iconCls="icon-cancel">关闭</a>
+       iconCls="icon-ok">Save</a> <a href="javascript:closeUserDialog()"
+                                   class="easyui-linkbutton" iconCls="icon-cancel">Close</a>
 </div>
 <div id="dlg_c" class="easyui-dialog"
      style="width: 300px;height:450px;padding: 10px 20px; position: relative; z-index:1000;"
@@ -138,7 +138,7 @@ function openUserModifyDialog() {
 
 
     function openbookInfoPage(id) {
-        window.parent.openTab('书籍摆放信息', 'storeInfo.jsp?id=' + id,
+        window.parent.openTab('Artical info', 'storeInfo.jsp?id=' + id,
                 'icon-shujias');
     }
 
@@ -162,7 +162,7 @@ function openUserModifyDialog() {
                 return $(this).form("validate");
             },
             success: function (result) {
-                $.messager.alert("系统提示", "保存成功");
+                $.messager.alert("System", "Saved");
                 resetValue();
                 $("#dlg").dialog("close");
                 $("#dg").datagrid("reload");

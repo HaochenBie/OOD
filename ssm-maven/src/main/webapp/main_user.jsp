@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>ssm-maven系统主页</title>
+    <title>PocketDoc Demo</title>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/jquery-easyui-1.3.3/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css"
@@ -14,7 +14,7 @@
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/jquery.easyui.min.js"></script>
     <script type="text/javascript"
-            src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"></script>
+            src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/locale/easyui-lang-en.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi22QldoqTNIvSH8bUTYnSniq7st7vryQ"></script>
     <script type="text/javascript">
     
@@ -42,8 +42,8 @@
         function logout() {
             $.messager
                     .confirm(
-                            "系统提示",
-                            "您确定要退出系统吗",
+                            "System",
+                            "Sure you want to logout",
                             function (r) {
                                 if (r) {
                                     window.location.href = "${pageContext.request.contextPath}/user/logout.do";
@@ -78,11 +78,35 @@
           };
           map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
           
-          var myLatLng = {lat: -25.363, lng: 131.044};
+          var myLatLng = {lat: 43.028948, lng: -76.110672};
+          var myLatLng1 = {lat: 43.021908, lng: -76.110560};
+          var myLatLng2 = {lat: 43.047151, lng: -76.129355};
+          var myLatLng3 = {lat: 43.042579, lng: -76.136934};
+          var myLatLng4 = {lat: 43.043710, lng: -76.158492};
           var marker = new google.maps.Marker({
               position: myLatLng,
               map: map,
-              title: 'Hello World!'
+              title: 'Walgreens Pharmacy'
+            });
+          var marker1 = new google.maps.Marker({
+              position: myLatLng1,
+              map: map,
+              title: 'cvs'
+            });
+          var marker2 = new google.maps.Marker({
+              position: myLatLng2,
+              map: map,
+              title: 'Walgreens Pharmacy'
+            });
+          var marker3 = new google.maps.Marker({
+              position: myLatLng3,
+              map: map,
+              title: 'Kinney Drugs'
+            });
+          var marker4 = new google.maps.Marker({
+              position: myLatLng4,
+              map: map,
+              title: 'Westside Family Pharmacy LLC'
             });
      }
  
@@ -99,19 +123,12 @@
              data-options="selected:true,iconCls:'icon-wenzhangs'"
              style="padding: 10px;height:10px;">
             <a
-                    href="javascript:openTab(' 文章管理','articleManage.jsp','icon-wenzhang')"
+                    href="javascript:openTab(' Aritcle','articleManageUser.jsp','icon-wenzhang')"
                     class="easyui-linkbutton"
                     data-options="plain:true,iconCls:'icon-wenzhang'"
-                    style="width: 150px;"> ArticleManagement</a>
+                    style="width: 150px;"> Article</a>
         </div>
-        <div title="PictureManage" data-options="iconCls:'icon-shouye'"
-             style="padding:10px">
-            <a
-                    href="javascript:openTab(' 图片设置','pictureManage.jsp?type=1&grade=1','icon-tupians')"
-                    class="easyui-linkbutton"
-                    data-options="plain:true,iconCls:'icon-tupian'"
-                    style="width: 150px;"> PictureSetting</a>
-        </div>
+        
         <div title="Medicine Manage" data-options="iconCls:'icon-shuji'"
              style="padding:10px">
             <a
@@ -122,7 +139,7 @@
         </div>
         <div title="UserManage" data-options="iconCls:'icon-item'"
              style="padding:10px;border:none;">
-            <!-- <a href="javascript:openTab(' 管理员列表','userManage.jsp','icon-lxr')"
+            <!-- <a href="javascript:openTab(' AdminList','userManage.jsp','icon-lxr')"
                class="easyui-linkbutton"
                data-options="plain:true,iconCls:'icon-lxr'" style="width: 150px;">
                 Admin list</a>--><a href="javascript:logout()"

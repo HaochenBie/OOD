@@ -8,22 +8,22 @@ import java.util.List;
  * @date 2017-3-1
  */
 public class Book implements Serializable {
-    private String id;// 主键id
-    private String isbn;// ISBN码
-    private String path;// 图片
-    private String title;// 标题
-    private String subtitle;// 副标题
+    private String id;
+    private String isbn;
+    private String path; 
+    private String title;
+    private String subtitle;
     private String originalTitle;
-    private String marketPrice;// 市场价
-    private String intro;// 简介
-    private String binding;// 装订方式
-    private String pages;// 页数
-    private String author;// 作者
-    private String publisher;// 出版社
-    private String catalog;// 目录
-    private String supply;// 库存
-    private String status;// 状态
-    private int hot;// 热度值
+    private String marketPrice;
+    private String intro;
+    private String binding;
+    private String pages;
+    private String author;
+    private String publisher;
+    private String catalog;
+    private String supply;
+    private String status;
+    private int hot;
 
     public String getId() {
         return id;
