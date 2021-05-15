@@ -7,11 +7,7 @@ import java.util.Map;
 import com.ssm.maven.core.entity.Book;
 import org.springframework.stereotype.Repository;
 
-/**
- * @author 1034683568@qq.com
- * @project_name ssm-maven
- * @date 2017-3-1
- */
+
 @Repository
 public interface BookDao extends Serializable {
     /**

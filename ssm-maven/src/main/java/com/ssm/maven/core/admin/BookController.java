@@ -20,11 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author 1034683568@qq.com
- * @project_name ssm-maven
- * @date 2017-3-1
- */
+
 @Controller
 @RequestMapping("/book")
 public class BookController {

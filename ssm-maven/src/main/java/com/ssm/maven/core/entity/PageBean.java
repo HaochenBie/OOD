@@ -1,14 +1,10 @@
 package com.ssm.maven.core.entity;
 
-/**
- * @author 1034683568@qq.com
- * @project_name ssm-maven
- * @date 2017-3-1
- */
+
 public class PageBean {
 
-    private int page; // 页码
-    private int pageSize; // 单页数据量
+    private int page; 
+    private int pageSize;
     private int start;
 
 

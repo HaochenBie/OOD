@@ -10,11 +10,11 @@ public class Picture implements Serializable {
 	}
 
 	private String id;
-	private String path;// 路径
-	private String type;// 外键类别
-	private String time;// 插入时间
-	private String url;//
-	private String grade;// 另一个外键
+	private String path;
+	private String type;
+	private String time;
+	private String url;
+	private String grade;
 
 	public String getId() {
 		return id;

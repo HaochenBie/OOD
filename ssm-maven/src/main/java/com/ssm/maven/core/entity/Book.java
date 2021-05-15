@@ -2,11 +2,7 @@ package com.ssm.maven.core.entity;
 
 import java.io.Serializable;
 import java.util.List;
-/**
- * @author 1034683568@qq.com
- * @project_name ssm-maven
- * @date 2017-3-1
- */
+
 public class Book implements Serializable {
     private String id;
     private String isbn;

@@ -7,7 +7,6 @@ import java.util.Map;
 
 public interface PictureService {
 	/**
-	 * 返回相应的数据集合
 	 * 
 	 * @param map
 	 * @return

@@ -10,16 +10,12 @@ import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author 1034683568@qq.com
- * @project_name ssm-maven
- * @date 2017-3-1
- */
+
 @Service("bookService")
 public class BookServiceImpl implements BookService {
     private static final long serialVersionUID = 1L;
     private static final Logger log = Logger
-            .getLogger(BookServiceImpl.class);// 日志文件
+            .getLogger(BookServiceImpl.class);
     @Resource
     private BookDao bookDao;
 

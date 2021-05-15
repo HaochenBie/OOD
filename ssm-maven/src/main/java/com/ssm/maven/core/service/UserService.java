@@ -5,11 +5,7 @@ import java.util.Map;
 
 import com.ssm.maven.core.entity.User;
 
-/**
- * @author 1034683568@qq.com
- * @project_name ssm-maven
- * @date 2017-3-1
- */
+
 public interface UserService {
 
     /**

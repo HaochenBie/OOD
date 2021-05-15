@@ -4,11 +4,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * @author 1034683568@qq.com
- * @project_name ssm-maven
- * @date 2017-3-1
- */
+
 public class ResponseUtil {
 
     public static void write(HttpServletResponse response, Object o) throws Exception {

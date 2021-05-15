@@ -11,11 +11,6 @@ import com.ssm.maven.core.dao.UserDao;
 import com.ssm.maven.core.entity.User;
 import com.ssm.maven.core.service.UserService;
 
-/**
- * @author 1034683568@qq.com
- * @project_name ssm-maven
- * @date 2017-3-1
- */
 @Service("userService")
 public class UserServiceImpl implements UserService {
 

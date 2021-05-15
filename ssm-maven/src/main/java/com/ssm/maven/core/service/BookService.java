@@ -6,11 +6,6 @@ import java.util.Map;
 
 import com.ssm.maven.core.entity.Book;
 
-/**
- * @author 1034683568@qq.com
- * @project_name ssm-maven
- * @date 2017-3-1
- */
 public interface BookService extends Serializable {
     /**
      * 返回相应的数据集合

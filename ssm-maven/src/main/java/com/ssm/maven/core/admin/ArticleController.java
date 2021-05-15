@@ -26,7 +26,7 @@ public class ArticleController {
 	@Resource
 	private ArticleService articleService;
 	private static final long serialVersionUID = 1L;
-	private static final Logger log = Logger.getLogger(ArticleController.class);// 日志文件
+	private static final Logger log = Logger.getLogger(ArticleController.class);
 
 	/**
 	 * 
@@ -65,7 +65,7 @@ public class ArticleController {
 	}
 
 	/**
-	 * 保存或修改
+	 *
 	 * 
 	 * @param article
 	 * @param response
@@ -94,7 +94,6 @@ public class ArticleController {
 	}
 
 	/**
-	 * 删除
 	 * 
 	 * @param ids
 	 * @param response
@@ -116,7 +115,6 @@ public class ArticleController {
 	}
 
 	/**
-	 * 根据id查找
 	 * 
 	 * @param id
 	 * @param response

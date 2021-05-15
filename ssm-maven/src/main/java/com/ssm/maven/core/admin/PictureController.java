@@ -24,9 +24,8 @@ public class PictureController {
 	@Resource
 	private PictureService pictureService;
 	private static final long serialVersionUID = 1L;
-	private static final Logger log = Logger.getLogger(PictureController.class);// 日志文件
+	private static final Logger log = Logger.getLogger(PictureController.class);
 	/**
-	 * 查找相应的数据集合
 	 * 
 	 * @param page
 	 * @param rows
@@ -64,7 +63,6 @@ public class PictureController {
 	}
 
 	/**
-	 * 保存或修改
 	 * 
 	 * @param picture
 	 * @param response
@@ -94,7 +92,6 @@ public class PictureController {
 	}
 
 	/**
-	 * 删除
 	 * 
 	 * @param ids
 	 * @param response
@@ -116,7 +113,6 @@ public class PictureController {
 	}
 
 	/**
-	 * 根据id查找
 	 * 
 	 * @param id
 	 * @param response

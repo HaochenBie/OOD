@@ -25,11 +25,7 @@ import com.ssm.maven.core.service.UserService;
 import com.ssm.maven.core.util.ResponseUtil;
 import com.ssm.maven.core.util.StringUtil;
 
-/**
- * @author 1034683568@qq.com
- * @project_name ssm-maven
- * @date 2017-3-1
- */
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -56,7 +52,7 @@ public class UserController {
         log.info("request: user/login , user: " + user.toString());
         if (resultUser == null) {
             request.setAttribute("user", user);
-            request.setAttribute("errorMsg", "璇疯鐪熸牳瀵硅处鍙枫�佸瘑鐮侊紒");
+            request.setAttribute("errorMsg", "!");
             return "login";
         } else {
             HttpSession session = request.getSession();
@@ -74,7 +70,6 @@ public class UserController {
 
 
     /**
-     * 淇敼瀵嗙爜
      *
      * @param user
      * @param response
@@ -98,7 +93,6 @@ public class UserController {
     }
 
     /**
-     * 閫�鍑虹郴缁�
      *
      * @return
      * @throws Exception
@@ -140,7 +134,6 @@ public class UserController {
     }
 
     /**
-     * 娣诲姞鎴栦慨鏀圭鐞嗗憳
      *
      * @param response
      * @return
@@ -168,7 +161,6 @@ public class UserController {
     }
 
     /**
-     * 鍒犻櫎绠＄悊鍛�
      *
      * @param ids
      * @param response

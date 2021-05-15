@@ -3,13 +3,13 @@ package com.ssm.maven.core.entity;
 import java.io.Serializable;
 
 public class Article implements Serializable {
-    private String id;//主键
-    private String articleTitle;//文章标题
-    private String articleCreateDate;//创建日期
-    private String articleContent;//文章内容
-    private int articleClassID;//文章类别id
-    private int isTop;//置顶字段
-    private String addName;//添加者
+    private String id;
+    private String articleTitle;
+    private String articleCreateDate;
+    private String articleContent;
+    private int articleClassID;
+    private int isTop;
+    private String addName;
 
     public String getId() {
         return id;

@@ -14,9 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-/**
- * Created by 13 on 2017/4/7.
- */
+
 @Controller
 @RequestMapping("/loadimg")
 public class LoadImageController {
